@@ -1,0 +1,80 @@
+---
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GithubIcon from '../icons/Github.astro';
+import MailIcon from '../icons/Mail.astro';
+import LinkedinIcon from '../icons/Linkedin.astro';
+import Layout from '../layouts/Layout.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../icons/Briefcase.astro';
+import CodeIcon from '../icons/Code.astro';
+import AddressBookIcon from '../icons/AddressBook.astro'
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Portfolio de Mario Martínez - Desarrollador y Programador Web"
+	description="Contrata a Mario Martínez para crear tu aplicación web. Desarrollador y programador web. Especializado en crear soluciones únicas.">
+	<main class="px-4">
+		<SectionContainer class="py-32 pb-32">
+			<img 
+				class="rounded-lg size-44 si mb-4"
+				src="../public/images/mario_martinez.jpg" 
+				alt="Fotografía de Mario Jaime Martínez Herrera"
+			>
+			<h1 class="text-white text-2xl font-bold flex flex-row gap-x-4 mb-1">
+					Mario Martínez 
+					<div class="flex justify-center items-center">
+						<a 
+							href="https://www.linkedin.com/in/mario-martínez-b509252bb"
+							target="_blank"
+							rel="noopener"
+							class="flex justify-center items-center"
+						>
+							<Badge>Disponible para Trabajar</Badge>
+						</a>
+					</div>
+			</h1>
+			<h2 class="text-base text-white/70 text-wrap max-w-[700px]">
+				Soy desarrollador web con sede en Santa Ana, El Salvador, especializado en la creación de soluciones únicas y personalizadas para mis clientes.
+			</h2>
+
+			<nav class="flex gap-2 mt-4 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/mario-martínez-b509252bb">
+					<LinkedinIcon class="size-5 md:size-6" />
+				</SocialPill>
+				<SocialPill href="https://github.com/Jaime07503">
+					<GithubIcon class="size-5 md:size-6" />
+				</SocialPill>
+				<SocialPill href="mailto:mariojaimemartinez27@gmail.com">
+					<MailIcon class="size-5 md:size-6" />
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7"/>
+				Proyectos 
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<!-- <SectionContainer id="contacto">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<AddressBookIcon class="size-7" />
+				Contacto
+			</h2>
+			<Contact />
+		</SectionContainer> -->
+	</main>
+</Layout>

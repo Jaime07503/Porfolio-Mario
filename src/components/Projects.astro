@@ -1,0 +1,89 @@
+---
+import HTMLIcon from '../icons/HTML.astro'
+import CSSIcon from '../icons/CSS.astro'
+import BootstrapIcon from '../icons/Bootstrap.astro'
+import JavaScriptIcon from '../icons/JavaScript.astro'
+import ReactIcon from '../icons/React.astro'
+
+const TAGS = {
+    HTML: {
+        name: 'HTML',
+        class: 'text-orange-600 font-bold',
+        color: 'border border-orange-200 rounded',
+        icon: HTMLIcon
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'text-sky-400 font-bold',
+        color: 'border border-sky-200 rounded',
+        icon: CSSIcon
+    },
+    BOOTSTRAP: {
+        name: 'Bootstrap',
+        class: 'text-purple-500 font-bold',
+        color: 'border border-purple-200 rounded',
+        icon: BootstrapIcon
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'text-yellow-300 font-bold',
+        color: 'border border-yellow-200 rounded',
+        icon: JavaScriptIcon
+    },
+    REACT: {
+        name: 'React',
+        class: 'text-cyan-400 font-bold',
+        color: 'border border-cyan-200 rounded',
+        icon: ReactIcon
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Equis Cero',
+        description: 'Versión moderna del clásico juego de Equis y Cero. Ofrece una interfaz intuitiva y responsiva, ideal para jugar en cualquier dispositivo.',
+        link: 'https://equis-cero.vercel.app/',
+        github: 'https://github.com/Jaime07503/Equis-Cero',
+        image: '../public/images/equis_cero.webp',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.REACT]
+    },
+    {
+        title: 'CinemaQuest',
+        description: 'Aplicación de búsqueda de películas. Permite a los usuarios encontrar información sobre sus películas favoritas de manera rápida y eficiente. ',
+        link: 'https://cinema-quest.vercel.app/',
+        github: 'https://github.com/Jaime07503/Cinema-Quest',
+        image: '../public/images/cinema_quest.webp',
+        tags: [TAGS.HTML, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT, TAGS.REACT]
+    }
+]
+---
+
+<div class="flex gap-7 flex-wrap">
+    {
+        PROJECTS.map(({ title, description, image, link, tags}) => (
+            <article class="sm:w-[48%] md:w-[48%] lg:w-[48%] flex flex-col mb-4">
+                <div class="flex flex-col h-full rounded-lg">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        <img class="rounded-t-lg" src={image}/>
+                    </a>
+                    <div class="flex flex-col flex-grow p-5 rounded-b-lg bg-gray-900">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-300">{title}</h5>
+                        <p class="mb-3 font-normal text-gray-300/70 text-pretty">{description}</p>
+                        <ul class="flex flex-row flex-wrap gap-2 mb-4">
+                            {
+                                tags.map(tag => (
+                                    <li class={tag.color}>
+                                        <span class={`flex gap-x-2 rounded p-2 text-sm ${tag.class}`}>
+                                            <tag.icon class="size-5"/>
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</div>
