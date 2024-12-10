@@ -4,6 +4,8 @@ import CSSIcon from '../icons/CSS.astro'
 import BootstrapIcon from '../icons/Bootstrap.astro'
 import JavaScriptIcon from '../icons/JavaScript.astro'
 import ReactIcon from '../icons/React.astro'
+import TailwindcssIcon from '../icons/Tailwindcss.astro'
+import OpenaiIcon from '../icons/Openai.astro'
 
 const TAGS = {
     HTML: {
@@ -24,6 +26,12 @@ const TAGS = {
         color: 'border border-purple-200 rounded',
         icon: BootstrapIcon
     },
+    TAILWINDCSS: {
+        name: 'TailwindCSS',
+        class: 'text-cyan-500 font-bold',
+        color: 'border border-cyan-200 rounded',
+        icon: TailwindcssIcon
+    },
     JAVASCRIPT: {
         name: 'JavaScript',
         class: 'text-yellow-300 font-bold',
@@ -35,10 +43,24 @@ const TAGS = {
         class: 'text-cyan-400 font-bold',
         color: 'border border-cyan-200 rounded',
         icon: ReactIcon
+    }, 
+    OPENAI: {
+        name: 'OpenAI',
+        class: 'text-white font-bold',
+        color: 'border border-white rounded',
+        icon: OpenaiIcon
     }
 }
 
 const PROJECTS = [
+{
+        title: 'Ara Quizzes',
+        description: 'Plataforma web que genera resúmenes y quizzes interactivos a partir de PDFs, usando IA para crear preguntas y respuestas en un juego de memoria dinámico.',
+        link: 'https://ara-quizzes.vercel.app/',
+        github: 'https://github.com/Jaime07503/QuizPDF-FrontEnd',
+        image: 'ara_quizzes.webp',
+        tags: [TAGS.HTML, TAGS.TAILWINDCSS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.OPENAI]
+    },
     {
         title: 'Equis Cero',
         description: 'Versión moderna del clásico juego de Equis y Cero. Ofrece una interfaz intuitiva y responsiva, ideal para jugar en cualquier dispositivo.',
